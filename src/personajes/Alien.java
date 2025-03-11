@@ -13,6 +13,10 @@ public class Alien extends Jugador{
 
     @Override
     public void ataca(Jugador jugador) {
+        if (this.getVidas() > 20) {
+            this.setAtaque(this.getAtaque() + 3);
+            this.setDefensa(this.getDefensa() - 3);
+        }
         super.ataca(jugador);
     }
 }
