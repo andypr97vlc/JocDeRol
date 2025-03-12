@@ -30,9 +30,9 @@ public class JocDeRol {
         Guerrero guerrero = new Guerrero("Guerrero", 20, 13, 120);
 
         // ¿Cada vez que atacan el alien les aumenta la vida permanentemente o solo en ese ataque?.
-        // ¿Y si el alien baja a 20 de vida se les debe restar el ataque que han ganado?
+        // ¿Y si el alien baja a 20 de vida se les debe restar el ataque que han ganado? Se restablece
 
-        // ¿Se puede tener defensa negativa?
+        // ¿Se puede tener defensa negativa? No
         guerrero.ataca(alien);
         alien.ataca(guerrero);
     }
