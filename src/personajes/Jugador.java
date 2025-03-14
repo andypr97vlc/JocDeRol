@@ -13,20 +13,6 @@ public class Jugador {
     private int defensa;
     private int vidas;
 
-    /**
-     * Constructor de la clase {@code Jugador} que inicializa un nuevo jugador con los atributos proporcionados.
-     *
-     * <p>Este constructor asigna los valores de nombre, ataque, defensa y vidas a los atributos correspondientes
-     * del objeto {@code Jugador}. Además, imprime un mensaje por consola indicando que se está creando una instancia
-     * de la clase {@code Jugador} o de una subclase de esta.
-     *
-     * @param nombre   El nombre del jugador. No debe ser {@code null}.
-     * @param ataque   El valor de ataque del jugador. Debe ser un valor no negativo.
-     * @param defensa  El valor de defensa del jugador. Debe ser un valor no negativo.
-     * @param vidas    El número de vidas del jugador. Debe ser un valor no negativo.
-     * @see #getClass() Para obtener la clase del objeto en tiempo de ejecución.
-     * @see Class#getSimpleName() Para obtener el nombre simple de la clase.
-     */
     public Jugador(String nombre, int ataque, int defensa, int vidas){
         this.nombre = nombre;
         this.ataque = ataque;

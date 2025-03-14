@@ -15,20 +15,6 @@ package personajes;
  */
 public class Alien extends Jugador{
 
-    /**
-     * Constructor de la clase {@code Alien} que inicializa un nuevo alien con los atributos proporcionados.
-     *
-     * <p>Este constructor llama al constructor de la clase padre ({@code super}) para inicializar
-     * los atributos comunes (nombre, ataque, defensa y vidas). Además, imprime un mensaje por consola
-     * indicando que se está creando una instancia de la clase {@code Alien} o de una subclase de esta.
-     *
-     * @param nombre   El nombre del alien. No debe ser {@code null}.
-     * @param ataque   El valor de ataque del alien. Debe ser un valor no negativo.
-     * @param defensa  El valor de defensa del alien. Debe ser un valor no negativo.
-     * @param vidas    El número de vidas del alien. Debe ser un valor no negativo.
-     * @see #getClass() Para obtener la clase del objeto en tiempo de ejecución.
-     * @see Class#getSimpleName() Para obtener el nombre simple de la clase.
-     */
     public Alien(String nombre, int ataque, int defensa, int vidas) {
         super(nombre, ataque, defensa, vidas);
 
