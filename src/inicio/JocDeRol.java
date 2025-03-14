@@ -26,7 +26,7 @@ public class JocDeRol {
 
     public static void pruebaFase3(){
         Humano humano = new Humano("Humano", 20, 13, 120);
-        Alien alien = new Alien("Alien", 15, 5, 45);
+        Alien alien = new Alien("Alien", 15, 5, 40);
         Guerrero guerrero = new Guerrero("Guerrero", 20, 13, 120);
 
         // ¿Cada vez que atacan el alien les aumenta la vida permanentemente o solo en ese ataque?.
@@ -34,6 +34,7 @@ public class JocDeRol {
 
         // ¿Se puede tener defensa negativa? No
         alien.ataca(guerrero);
+        guerrero.ataca(alien);
         alien.ataca(guerrero);
     }
 }
