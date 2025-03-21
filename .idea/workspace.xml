@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e81216b-a478-407b-b51b-28405862ce9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/otros/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/JocDeRol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/JocDeRol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personajes/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Alien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personajes/Guerrero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Guerrero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/personajes/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Jugador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -49,17 +53,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JocDeRol.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andy/MEGA/PRG_Superliga&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JocDeRol.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "fase4",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/andy/MEGA/PRG_Superliga",
+    "settings.editor.selected.configurable": "settings.sync"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="JocDeRol" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
@@ -78,6 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JocDeRol" />
+        <item itemvalue="Application.JocDeRol" />
         <item itemvalue="Application.JocDeRol" />
       </list>
     </recent_temporary>

@@ -131,4 +131,12 @@ public class Jugador {
         System.out.println("\tAtacado: " + jugador);
         System.out.println("===== FIN DEL COMBATE =====");
     }
+
+    @Override
+    public boolean equals(Object objeto) {
+        Jugador jugador = (Jugador) objeto;
+        boolean b = false;
+        if (this.nombre.equalsIgnoreCase(jugador.nombre)) b = true;
+        return b;
+    }
 }

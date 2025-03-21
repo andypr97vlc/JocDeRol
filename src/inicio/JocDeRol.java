@@ -1,5 +1,6 @@
 package inicio;
 
+import otros.Equipo;
 import personajes.Alien;
 import personajes.Guerrero;
 import personajes.Humano;
@@ -8,7 +9,7 @@ import personajes.Jugador;
 public class JocDeRol {
     public static void main(String[] args) {
 
-        pruebaFase3();
+        pruebaFase4();
     }
 
     public static void pruebaFase1(){
@@ -25,15 +26,28 @@ public class JocDeRol {
     }
 
     public static void pruebaFase3(){
-        Humano humano = new Humano("Humano", 20, 13, 120);
-        Alien alien = new Alien("Alien", 14, 5, 40);
-        Guerrero guerrero = new Guerrero("Guerrero", 20, 13, 120);
+        Jugador humano = new Humano("Humano", 20, 13, 120);
+        Jugador alien = new Alien("Alien", 14, 5, 40);
+        Jugador guerrero = new Guerrero("Guerrero", 20, 13, 120);
 
-        // ¿Cada vez que atacan el alien les aumenta la vida permanentemente o solo en ese ataque?.
-        // ¿Y si el alien baja a 20 de vida se les debe restar el ataque que han ganado? Se restablece
+        // Cada vez que atacan el alien le aumenta el ataque permanentemente.
+        // Cada vez que atacan el alien le baja la defensa permanentemente.
+        // Si ataca por debajo de 20 PV no usa su habilidad.
+        // ¿Se puede tener defensa negativa? No.
 
-        // ¿Se puede tener defensa negativa? No
         alien.ataca(guerrero);
         alien.ataca(guerrero);
+    }
+
+    public static void pruebaFase4(){
+        Equipo equip1 = new Equipo("Padalustro");
+
+        Jugador j1 = new Guerrero("Miguel", 30, 20, 100);
+        Jugador j2 = new Alien("Manolo", 25, 10, 50);
+        Jugador j3 = new Alien("Miguel", 30, 20, 100); // Mismo nombre que j1
+
+        equip1.poner(j1);
+        equip1.poner(j2);
+        equip1.poner(j3);
     }
 }
