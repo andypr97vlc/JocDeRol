@@ -18,7 +18,7 @@ public class Guerrero extends Humano{
     }
 
     public String toString() {
-        return "\uD83D\uDEE1\uFE0F " + super.toString();
+        return "\uD83D\uDEE1️ " + super.toString();
     }
 
     @Override

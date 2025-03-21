@@ -22,13 +22,15 @@ public class Alien extends Jugador{
     }
 
     public String toString() {
-        return "\uD83D\uDC7D " + super.toString();
+        return "\uD83D\uDC7D️ " + super.toString();
     }
 
+    // He entendido en el enunciado que el alien debe mantener las estadísticas después del combate
+    // y una vez tenga la vida por debajo de 20 ya no use su habilidad
     @Override
     public void ataca(Jugador jugador) {
         System.out.println("\n===== INICIO DEL COMBATE =====");
-        System.out.println("\nANTES DEL ATAQUE:");
+        System.out.println("ANTES DEL ATAQUE:");
         System.out.println("\tAtacante: " + this);
         System.out.println("\tAtacado: " + jugador);
 

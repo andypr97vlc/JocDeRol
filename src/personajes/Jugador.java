@@ -117,7 +117,7 @@ public class Jugador {
      */
     public void ataca(Jugador jugador){
         System.out.println("\n===== INICIO DEL COMBATE =====");
-        System.out.println("\nANTES DEL ATAQUE:");
+        System.out.println("ANTES DEL ATAQUE:");
         System.out.println("\tAtacante: " + this);
         System.out.println("\tAtacado: " + jugador);
 

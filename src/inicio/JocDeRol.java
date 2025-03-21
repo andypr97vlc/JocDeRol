@@ -34,7 +34,6 @@ public class JocDeRol {
 
         // ¿Se puede tener defensa negativa? No
         alien.ataca(guerrero);
-        guerrero.ataca(alien);
         alien.ataca(guerrero);
     }
 }
