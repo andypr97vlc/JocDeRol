@@ -1,4 +1,7 @@
 package personajes;
+
+import otros.Equipo;
+
 /**
  * La clase {@code Jugador} representa a un jugador en el juego, con atributos como nombre, ataque, defensa y vidas.
  *
@@ -12,6 +15,7 @@ public class Jugador {
     private int ataque;
     private int defensa;
     private int vidas;
+    private Equipo equipo;
 
     public Jugador(String nombre, int ataque, int defensa, int vidas){
         this.nombre = nombre;
@@ -39,6 +43,15 @@ public class Jugador {
         this.vidas = vidas;
     }
 
+    public void setEquipo(Equipo equipo) {
+        if (equipo != null) {
+            equipo.quitar(this);
+        } else {
+            equipo.poner(this);
+        }
+        this.equipo = equipo;
+    }
+
     // Getters
     public String getNombre(){
         return nombre;
@@ -56,9 +69,14 @@ public class Jugador {
         return vidas;
     }
 
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
     // Resto de funciones
     public String toString() {
         return this.getNombre() +
+                " [" + this.getEquipo().getNombre() + "] " +
                 " (" + this.getClass().getSimpleName().toUpperCase() +
                 ", PA:" + this.getAtaque() +
                 ", PD:" + this.getDefensa() +
