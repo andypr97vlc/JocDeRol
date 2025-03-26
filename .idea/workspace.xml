@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/JocDeRol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/JocDeRol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/otros/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otros/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personajes/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Alien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personajes/Guerrero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Guerrero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/personajes/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Jugador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.JocDeRol.executor": "Debug",
+    "Application.JocDeRol.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "fase4",
@@ -117,11 +119,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/inicio/JocDeRol.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

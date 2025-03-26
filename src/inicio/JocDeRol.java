@@ -40,25 +40,33 @@ public class JocDeRol {
     }
 
     public static void pruebaFase4(){
-        Equipo equip1 = new Equipo("Padalustro");
+        Equipo equipo1 = new Equipo("Que es?");
+        Equipo equipo2 = new Equipo("Padalustro");
 
-        Jugador j1 = new Guerrero("Miguel", 30, 20, 100);
+        Jugador j1 = new Alien("Miguel", 30, 20, 100);
         Jugador j2 = new Alien("Manolo", 25, 10, 50);
         Jugador j3 = new Alien("Miguel", 35, 10, 50); // Mismo nombre que j1
-        Jugador j4 = new Alien("Lucia", 15, 30, 150);
+        Jugador j4 = new Guerrero("Lucia", 15, 30, 150);
 
-        equip1.poner(j1);
-        equip1.poner(j2);
-        equip1.poner(j3);
-        equip1.poner(j4);
+        equipo1.poner(j1);
+        equipo1.poner(j2);
+        equipo1.poner(j3);
+        equipo1.poner(j4);
 
-        equip1.quitar(j2);
-        equip1.quitar(j2);
+        equipo1.quitar(j2);
+        equipo1.quitar(j2);
 
-        System.out.println(equip1);
+        System.out.println(equipo1);
 
-        equip1.quitar(j4);
+        equipo1.quitar(j4);
 
-        System.out.println(equip1);
+        System.out.println(equipo1);
+
+        equipo2.poner(j2);
+        equipo2.poner(j1);
+
+        equipo2.quitar(j4);
+
+        System.out.println(equipo2);
     }
 }

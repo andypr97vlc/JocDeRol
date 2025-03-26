@@ -18,7 +18,7 @@ public class Guerrero extends Humano{
     }
 
     public String toString() {
-        return "\uD83D\uDEE1️ " + super.toString();
+        return "\uD83D\uDDE1️ " + super.toString();
     }
 
     @Override
@@ -29,8 +29,8 @@ public class Guerrero extends Humano{
 
         // Ignorar golpes menores de 5 de daño
         if (dmgDefendido < 5) {
-            System.out.println("Daño recibido menor de 5. Activada la habilidad pasiva del guerrero.");
-            System.out.println(this.getNombre() + " bloquea el ataque y no pierde vidas!");
+            System.out.println("\uD83D\uDEE1️ Daño recibido menor de 5. Activada la habilidad pasiva del guerrero.\n" +
+                    this.getNombre() + " bloquea el ataque y no pierde vidas!");
             return;
         }
 

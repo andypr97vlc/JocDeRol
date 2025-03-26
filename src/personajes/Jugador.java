@@ -44,11 +44,6 @@ public class Jugador {
     }
 
     public void setEquipo(Equipo equipo) {
-        if (equipo != null) {
-            equipo.quitar(this);
-        } else {
-            equipo.poner(this);
-        }
         this.equipo = equipo;
     }
 
@@ -75,8 +70,9 @@ public class Jugador {
 
     // Resto de funciones
     public String toString() {
+        String nombreEquipo = (this.getEquipo() != null) ? this.getEquipo().getNombre() : "Sin equipo";
         return this.getNombre() +
-                " [" + this.getEquipo().getNombre() + "] " +
+                " [" + nombreEquipo + "]" +
                 " (" + this.getClass().getSimpleName().toUpperCase() +
                 ", PA:" + this.getAtaque() +
                 ", PD:" + this.getDefensa() +

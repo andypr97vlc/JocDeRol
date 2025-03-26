@@ -36,7 +36,7 @@ public class Alien extends Jugador{
 
         // Saber si el alien tiene más de 20 de vida
         if (this.getVidas() > 20) {
-            System.out.println("\n⚠️ " + this.getNombre() + " enloquece! (+3 ATAC, -3 DEFENSA)");
+            System.out.println("\n\uD83D\uDCA2 " + this.getNombre() + " enloquece! (+3 ATAC, -3 DEFENSA)");
             this.setAtaque(this.getAtaque() + 3);
             this.setDefensa(Math.max(this.getDefensa() - 3, 0)); // Evita defensa negativa
         }

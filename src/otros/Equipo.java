@@ -22,7 +22,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Equipo " + this.nombre + ":\n");
+        final StringBuilder sb = new StringBuilder("Equipo [" + this.nombre + "]\n");
         for (Jugador j : jugadores) {
             sb.append("\t - ").append(j).append("\n");
         }
@@ -31,11 +31,11 @@ public class Equipo {
 
     public void poner(Jugador jugador) {
         if (!jugadores.contains(jugador)) {
-            jugador.setEquipo(this);
             jugadores.add(jugador);
-            System.out.println(jugador.getNombre() + " se ha unido al equipo " + this.getNombre() + "!");
+            jugador.setEquipo(this);
+            System.out.println("\u001B[32m\u2713 " + jugador.getNombre() + " se ha unido al equipo: [" + this.getNombre() + "]\u001B[0m");
         } else {
-            System.out.println(jugador.getNombre() + " ya está en el equipo " + this.getNombre() + "!");
+            System.out.println("\u001B[33m\u26A0 " + jugador.getNombre() + " ya está en el equipo: [" + this.getNombre() + "]\u001B[0m");
         }
     }
 
@@ -43,9 +43,9 @@ public class Equipo {
         if (jugadores.contains(jugador)){
             jugadores.remove(jugador);
             jugador.setEquipo(null);
-            System.out.println("El jugador " + jugador.getNombre() + " ha sido eliminado del equipo " + this.nombre + ".");
+            System.out.println("\u001B[36m\uD83D\uDEAA " + jugador.getNombre() + " ha abandonado el equipo: [" + this.nombre + "]\u001B[0m");
         } else {
-            System.out.println("El jugador " + jugador.getNombre() + " no se encuentra en ningún equipo.");
+            System.out.println("\u001B[33m\u26A0 " + jugador.getNombre() + " no se encuentra en el equipo: [" + this.nombre + "]\u001B[0m");
         }
     }
 }
