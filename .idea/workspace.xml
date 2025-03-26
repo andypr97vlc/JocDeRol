@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e81216b-a478-407b-b51b-28405862ce9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/otros/Poder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/JocDeRol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/JocDeRol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/otros/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otros/Equipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personajes/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Alien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personajes/Guerrero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Guerrero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personajes/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personajes/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Humano.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
     "Application.JocDeRol.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "fase4",
+    "git-widget-placeholder": "fase5",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/andy/MEGA/PRG_Superliga",
     "settings.editor.selected.configurable": "settings.sync"

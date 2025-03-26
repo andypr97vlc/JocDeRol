@@ -1,6 +1,7 @@
 package inicio;
 
 import otros.Equipo;
+import otros.Poder;
 import personajes.Alien;
 import personajes.Guerrero;
 import personajes.Humano;
@@ -9,7 +10,7 @@ import personajes.Jugador;
 public class JocDeRol {
     public static void main(String[] args) {
 
-        pruebaFase4();
+        pruebaFase5git ();
     }
 
     public static void pruebaFase1(){
@@ -68,5 +69,11 @@ public class JocDeRol {
         equipo2.quitar(j4);
 
         System.out.println(equipo2);
+    }
+
+    public static void pruebaFase5(){
+        Poder poder1 = new Poder("Fuerza", 10, 5);
+
+        System.out.println(poder1);
     }
 }

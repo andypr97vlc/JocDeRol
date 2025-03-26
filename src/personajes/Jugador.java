@@ -1,6 +1,9 @@
 package personajes;
 
 import otros.Equipo;
+import otros.Poder;
+
+import java.util.ArrayList;
 
 /**
  * La clase {@code Jugador} representa a un jugador en el juego, con atributos como nombre, ataque, defensa y vidas.
@@ -16,6 +19,7 @@ public class Jugador {
     private int defensa;
     private int vidas;
     private Equipo equipo;
+    private ArrayList<Poder> poderes = new ArrayList<>();
 
     public Jugador(String nombre, int ataque, int defensa, int vidas){
         this.nombre = nombre;
@@ -152,5 +156,17 @@ public class Jugador {
         boolean b = false;
         if (this.nombre.equalsIgnoreCase(jugador.nombre)) b = true;
         return b;
+    }
+
+    public void poner(Poder poder){
+        if (!poderes.contains(poder)) {
+            poderes.add(poder);
+        } else System.out.println(this.getNombre() + " ya tiene ese poder!");
+    }
+
+    public void quitar(Poder poder){
+        if (poderes.contains(poder)) {
+            poderes.remove(poder);
+        } else System.out.println(this.getNombre() + " no tiene ese poder!");
     }
 }

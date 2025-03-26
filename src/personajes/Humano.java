@@ -18,6 +18,6 @@ public class Humano extends Jugador{
     }
 
     public String toString() {
-        return super.toString();
+        return "\uD83E\uDDD1" + super.toString();
     }
 }
