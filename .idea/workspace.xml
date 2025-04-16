@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e81216b-a478-407b-b51b-28405862ce9c" name="Changes" comment="Trabajando en el ejercicio 17, 2 y 3 punto">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_25,_21_14_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_25__21_14__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inicio/Equipos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inicio/Jugadores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/inicio/Poderes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/teclado/Pantalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_3_25__17_10__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercici obligatori 06 objectes (joc de rol) (3.4).pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Exercici JocDeRol.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/JocDeRol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/JocDeRol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/otros/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otros/Equipo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/otros/Poder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otros/Poder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/personajes/Alien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Alien.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/personajes/Guerrero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Guerrero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personajes/Humano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Humano.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/personajes/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teclado/Teclado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teclado/Teclado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,23 +68,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.JocDeRol.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andy/MEGA/PRG_Superliga&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.toDoOptions&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.JocDeRol.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Fase-6",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/andy/Descargas/JetBrains-Discord-Integration-2.1.6.242.zip",
+    "settings.editor.selected.configurable": "preferences.toDoOptions"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="JocDeRol" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />

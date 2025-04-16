@@ -1,14 +1,53 @@
 package teclado;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Teclado {
-    static Scanner sc = new Scanner(System.in);
+    public static Scanner sc = new Scanner(System.in);
 
-    public static void imprimirLinea(int cantidad) {
-        if (cantidad > 0) {
-            System.out.print("-");
-            imprimirLinea(cantidad - 1);
+    // Función para leer enteros por teclado
+    public static int leerEntero(){
+        while (true) {
+            try {
+                System.out.print("--> ");
+                return sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("\u001B[33m⚠ Introduce un número \u001B[0m");
+                sc.nextLine();
+            }
         }
+    }
+
+    // Función para leer string por teclado
+    public static String leerString(){
+        System.out.print("--> ");
+        return sc.nextLine();
+    }
+
+    // Función para leer un carácter por teclado
+    public static String leerChar(){
+        while (true){
+            System.out.print("--> ");
+            String c = sc.nextLine();
+            if(c.length() == 1){
+                return c;
+            } else {
+                System.out.println("\u001B[33m⚠ Introduce solo un carácter \u001B[0m");
+            }
+        }
+    }
+
+    // Procedimiento recursivo para imprimir una cantidad de símbolos
+    public static void imprimirLinea(int cantidad, char simbolo) {
+        if (cantidad > 0) {
+            System.out.print(simbolo);
+            imprimirLinea(cantidad - 1, simbolo);
+        }
+    }
+
+    // Función que generá un número aleatorio dentro de un rango
+    public static int randomInt(int min, int max) {
+        return ThreadLocalRandom.current().nextInt(min, max);
     }
 }

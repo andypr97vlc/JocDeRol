@@ -3,6 +3,16 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+.idea/
+!.idea/codeStyles/
+!.idea/copyright/
+!.idea/inspectionProfiles/
+!.idea/runConfigurations/
+!.idea/misc.xml
+!.idea/workspace.xml
+!.idea/modules.xml
+!.idea/shelf/
+
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -25,8 +35,5 @@ bin/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
-.DS_Store
-
-## Archivos ##
-.pdf
+# Ignorar DS_Store en cualquier lugar
+**/.DS_Store

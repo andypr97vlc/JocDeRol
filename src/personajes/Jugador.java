@@ -6,29 +6,20 @@ import teclado.Teclado;
 
 import java.util.ArrayList;
 
-/**
- * La clase {@code Jugador} representa a un jugador en el juego, con atributos como nombre, ataque, defensa y vidas.
- *
- * <p>Esta clase es la base para crear diferentes tipos de jugadores o personajes en el juego. Proporciona
- * los atributos básicos y métodos comunes que pueden ser heredados o extendidos por subclases.
- *
- * @see Alien Para un ejemplo de una subclase que extiende {@code Jugador}.
- */
 public class Jugador {
     private String nombre;
     private int ataque;
     private int defensa;
     private int vidas;
+    public static int vidaInicial = 200;
     private Equipo equipo;
-    private ArrayList<Poder> poderes = new ArrayList<>();
+    private final ArrayList<Poder> poderes = new ArrayList<>();
 
     public Jugador(String nombre, int ataque, int defensa, int vidas){
         this.nombre = nombre;
         this.ataque = ataque;
         this.defensa = defensa;
         this.vidas = vidas;
-
-        System.out.println("Soy el constructor de Jugador pero estoy creando un " + this.getClass().getSimpleName());
     }
 
     // Setters
@@ -48,14 +39,16 @@ public class Jugador {
         this.vidas = vidas;
     }
 
+    // Modificado el setter para que sea bidireccional con el equipo
     public void setEquipo(Equipo equipo) {
         if (this.getEquipo() == equipo && equipo != null){
-            System.out.println("\u001B[33m\u26A0 " + this.getNombre() + " ya está en el equipo: [" + equipo.getNombre() + "]\u001B[0m");
+            System.out.println("\u001B[33m⚠ " + this.getNombre() + " ya está en el equipo: [" + equipo.getNombre() + "]\u001B[0m");
         }
         if (this.equipo == null && equipo == null){
-            System.out.println("\u001B[33m\u26A0 " + this.getNombre() + " no se encuentra en ningún equipo.\u001B[0m");
+            System.out.println("\u001B[33m⚠ " + this.getNombre() + " no se encuentra en ningún equipo.\u001B[0m");
         }
 
+        // Añade el equipo al jugador o lo elimina de forma bidireccional
         if (equipo != null) {
             this.equipo = equipo;
             if (!equipo.getJugadores().contains(this)) {
@@ -96,9 +89,17 @@ public class Jugador {
         return poderes;
     }
 
-    // Resto de funciones
+    public static int getVidaInicial() {
+        return vidaInicial;
+    }
+
+    // Resto de funciones y procedimientos
     public String toString() {
-        String nombreEquipo = (this.getEquipo() != null) ? this.getEquipo().getNombre() : "Sin equipo";
+        // Comprueba que tenga equipo para añadirlo al string o poner que no tiene equipo
+        String nombreEquipo = this.getEquipo() != null ? this.getEquipo().getNombre() : "Sin equipo";
+        // Saber si se encuentra muerto o vivo para añadirlo al string
+        String muerto = this.getVidas() == 0 ? "Está muerto. \u2620\uFE0F" : "";
+        // En un principio era una lista con los poderes, pero el IDE me recomendaba poner esto.
         final StringBuilder poderes = new StringBuilder();
         if (!this.getPoderes().isEmpty()){
             poderes.append("\n\t\tTiene los poderes:");
@@ -112,33 +113,12 @@ public class Jugador {
                 " (" + this.getClass().getSimpleName().toUpperCase() +
                 ", PA:" + this.getAtaque() +
                 ", PD:" + this.getDefensa() +
-                ", PV:" + this.getVidas() + ")" +
+                ", PV:" + this.getVidas() + ") " +
+                muerto +
                 poderes;
     }
 
-    /**
-     * Procesa el daño recibido por el personaje, aplicando la defensa para reducir el daño
-     * y actualizando la vida restante del personaje.
-     *
-     * <p>El daño recibido se reduce restando la defensa del personaje. Si el daño resultante
-     * es negativo, se ajusta a 0 para evitar que el personaje "se cure" al recibir daño.
-     *
-     * <p>La vida del personaje se actualiza restando el daño defendido. Si la vida restante
-     * es menor que 0, se ajusta a 0 para evitar valores negativos.
-     *
-     * <p>El método imprime por consola un mensaje detallado que incluye:
-     * <ul>
-     *   <li>El nombre del personaje.</li>
-     *   <li>El daño recibido.</li>
-     *   <li>La defensa aplicada.</li>
-     *   <li>La vida inicial y la vida restante después del golpe.</li>
-     * </ul>
-     *
-     * @param dmg El daño recibido antes de aplicar la defensa. Debe ser un valor no negativo.
-     * @see #getDefensa() Para obtener el valor de defensa del personaje.
-     * @see #getVidas() Para obtener la vida actual del personaje.
-     * @see #setVidas(int) Para establecer la nueva vida del personaje después del golpe.
-     */
+    // Procedimiento para que un jugador golpee con el daño asignado
     protected void esGolpeadoCon(int dmg){
         // Cálculo del daño real después de defenderse
         int dmgDefendido = dmg - this.getDefensa();
@@ -156,9 +136,10 @@ public class Jugador {
         this.setVidas(vidaRestante);
     }
 
+    // Funcion para sacar la suma total del daño y defensa de los poderes para añadirlo posteriormente a la hora de atacar
     protected Integer[] estadisticasPoderes(){
-
         Integer[] estadisticas = {0, 0};
+        // Recorre los poderes y guarda la suma total del daño y la defensa
         for (Poder p : this.getPoderes()){
             estadisticas[0] += p.getBonusAtaque();
             estadisticas[1] += p.getBonusDefensa();
@@ -170,35 +151,27 @@ public class Jugador {
         System.out.println(pasivaDe);
         System.out.println("- Anteriores estadísticas: Daño: " + this.getAtaque() + ", Defensa: " + this.getDefensa());
         System.out.println("+ Nuevas estadísticas: Daño: " + (this.getAtaque() + estadisticas[0]) + ", Defensa: " + (this.getDefensa()  + estadisticas[1]));
-        Teclado.imprimirLinea(cantidadLetras);
+        Teclado.imprimirLinea(cantidadLetras, '-');
         System.out.println();
 
+        // Añadir estadísticas a los jugadores
         this.setAtaque(this.getAtaque() + estadisticas[0]);
         this.setDefensa(this.getDefensa() + estadisticas[1]);
         return estadisticas;
     }
 
-    /**
-     * Realiza un combate entre el jugador actual (atacante) y otro jugador (atacado).
-     * El procedimiento consta de dos fases: ataque y contraataque.
-     *
-     * <p>El método imprime por consola el estado de los jugadores antes y después del combate,
-     * así como los mensajes descriptivos de cada acción realizada durante el combate.
-     *
-     * @param jugador El jugador objetivo que será atacado. No debe ser {@code null}.
-     * @see Jugador#esGolpeadoCon(int) Para más detalles sobre cómo se calcula el daño recibido.
-     */
+    // Procedimiento para atacar a otro jugador
     public void ataca(Jugador jugador){
-
+        // Recoger los datos de los poderes de ambos jugadores
         Integer[][] dmg_def = {{0, 0}, {0, 0}};
         if (!getPoderes().isEmpty()) {
             dmg_def[0] = estadisticasPoderes();
         }
-
         if (!jugador.getPoderes().isEmpty()){
             dmg_def[1] = jugador.estadisticasPoderes();
         }
 
+        // Estadísticas anteriores al combate
         System.out.println("\u001B[32m===== INICIO DEL COMBATE =====\u001B[0m");
         System.out.println("ANTES DEL ATAQUE:");
         System.out.println("\tAtacante: " + this);
@@ -206,35 +179,45 @@ public class Jugador {
 
         System.out.println("\n>>> " + this.getNombre() + " ataca a " + jugador.getNombre() + "!");
         jugador.esGolpeadoCon(this.getAtaque());
-        System.out.println("\n>>> " + jugador.getNombre() + " contraataca!");
-        this.esGolpeadoCon(jugador.getAtaque());
 
+        // Evitar que el jugador que ha muerto contraataque
+        if(jugador.getVidas() == 0) System.out.println(jugador.getNombre() + " ha muerto! \u2620\uFE0F");
+        else{
+            System.out.println("\n>>> " + jugador.getNombre() + " contraataca!");
+            this.esGolpeadoCon(jugador.getAtaque());
+        }
+
+        // Estadísticas posteriores al combate
         System.out.println("\nDESPUÉS DEL ATAQUE:");
         System.out.println("\tAtacante: " + this);
         System.out.println("\tAtacado: " + jugador);
         System.out.println("\u001B[91m===== FIN DEL COMBATE =====\u001B[0m");
 
+        // Restar los datos de los poderes para que vuelva a la normalidad
         this.setAtaque(this.getAtaque() - dmg_def[0][0]);
         this.setDefensa(this.getDefensa() - dmg_def[0][1]);
         jugador.setAtaque(jugador.getAtaque() - dmg_def[1][0]);
         jugador.setDefensa(jugador.getDefensa() - dmg_def[1][1]);
     }
 
+    // Sobrescrita la funcion para comprobar solo el nombre del jugador
     @Override
     public boolean equals(Object objeto) {
         Jugador jugador = (Jugador) objeto;
-        return this.nombre.equalsIgnoreCase(jugador.nombre);
+        return this.getNombre().equalsIgnoreCase(jugador.getNombre());
     }
 
+    // Procedimiento que añade un poder a la lista de poderes del jugador
     public void poner(Poder poder){
         if (!poderes.contains(poder)) {
             poderes.add(poder);
-        } else System.out.println(this.getNombre() + " ya tiene ese poder!");
+        } else System.out.println("\u001B[33m⚠ " + this.getNombre() + " ya tiene ese poder!\u001B[0m");
     }
 
+    // Procedimiento que elimina un poder a la lista de poderes del jugador
     public void quitar(Poder poder){
         if (poderes.contains(poder)) {
             poderes.remove(poder);
-        } else System.out.println(this.getNombre() + " no tiene ese poder!");
+        } else System.out.println("\u001B[33m⚠ " + this.getNombre() + " no tiene ese poder!\u001B[0m");
     }
 }
