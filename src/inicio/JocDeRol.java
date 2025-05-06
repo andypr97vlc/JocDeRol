@@ -86,7 +86,7 @@ public class JocDeRol {
                     jugarAuto();
                     break;
                 case 2:
-                    // TODO jugarManual()
+                    jugarManual();
                     break;
                 default:
                     System.out.println("\u001B[33m⚠ No existe la opción elegida \u001B[0m");
@@ -98,49 +98,88 @@ public class JocDeRol {
     protected static void jugarAuto(){
         if (Jugadores.lista.size() > 1){
             Jugador ganador = Jugadores.lista.getFirst();
-            int intentos;
-            int jugadoresVivos;
-            do{
-                // Escoger a dos jugadores aleatorios
-                int j1Random; int j2Random;
-                do {
-                    j1Random = Teclado.randomInt(0, Jugadores.lista.size());
-                } while (Jugadores.lista.get(j1Random).getVidas() <= 0);
 
-                // Intentos para evitar bucle infinito si solo queda un jugador con más de 0 de vida
-                intentos = 0;
-                do {
-                    j2Random = Teclado.randomInt(0, Jugadores.lista.size());
-                    intentos++;
-                    if (intentos == 100) break;
-                } while (j1Random == j2Random || Jugadores.lista.get(j2Random).getVidas() <= 0);
-
-                // Solo atacar si hay 2 jugadores vivos
-                if(intentos != 100){
-                    Jugador j1 = Jugadores.lista.get(j1Random);
-                    Jugador j2 = Jugadores.lista.get(j2Random);
-
-                    j1.ataca(j2);
-                }
-
+            while(true){
                 // Saber cuantos jugadores siguen vivos
-                jugadoresVivos = 0;
+                int jugadoresVivos = 0;
                 for (Jugador j : Jugadores.lista){
                     if(j.getVidas() > 0){
                         ganador = j;
                         jugadoresVivos++;
                     }
                 }
-            } while(jugadoresVivos > 1);
+                if (jugadoresVivos == 1) break;
 
-            if (intentos == 50) System.out.println("El único jugador vivo es: " + ganador);
-            else System.out.println("El ganador es: " + ganador);
+                // Escoger a dos jugadores aleatorios
+                int j1Random; int j2Random;
+                do {
+                    j1Random = Teclado.randomInt(0, Jugadores.lista.size());
+                } while (Jugadores.lista.get(j1Random).getVidas() <= 0);
+
+                // Elegir un personaje que no sea el mismo o esté muerto
+                do {
+                    j2Random = Teclado.randomInt(0, Jugadores.lista.size());
+                } while (j1Random == j2Random || Jugadores.lista.get(j2Random).getVidas() <= 0);
+
+                // Atacar
+                Jugadores.lista.get(j1Random).ataca(Jugadores.lista.get(j2Random));
+            }
+
+            System.out.println("El ganador es: " + ganador);
+        } else if (Jugadores.lista.isEmpty()){
+            System.out.println("No hay jugadores en la lista");
         } else {
-            System.out.println("Solo hay un jugador, así que gana automáticamente: " +
+            System.out.println("Solo existe un jugador, así que gana automáticamente:\n" +
                     Jugadores.lista.getFirst());
         }
     }
 
+    // Procedimiento para jugar la partida de forma manual
+    protected static void jugarManual(){
+        if (Jugadores.lista.size() > 1){
+            Jugador ganador = Jugadores.lista.getFirst();
+
+            while (true){
+                // Saber cuantos jugadores siguen vivos
+                int jugadoresVivos = 0;
+                for (Jugador j : Jugadores.lista){
+                    if(j.getVidas() > 0){
+                        ganador = j;
+                        jugadoresVivos++;
+                    }
+                }
+                if (jugadoresVivos == 1) break;
+
+                int jugadorElegido;
+                // Bucle para que los jugadores ataquen en orden
+                for (int i = 0; i < Jugadores.lista.size(); i++) {
+                    // Si el jugador al que le toca se encuentra muerto, saltará al siguiente
+                    if (Jugadores.lista.get(i).getVidas() > 0){
+                        System.out.println("Le toca jugar a " + Jugadores.lista.get(i).getNombre());
+
+                        /* Comprobar que el número de la elección este dentro del rango permitido,
+                        que el jugador no esté muerto o sea el mismo.*/
+                        do {
+                            System.out.println("A que jugador quieres atacar?");
+                            Jugadores.consultar();
+                            jugadorElegido = Teclado.leerEntero();
+                            if(Jugadores.lista.get(jugadorElegido - 1).getVidas() <= 0) System.out.println("\u001B[33m⚠ Ese jugador está muerto. \u2620\uFE0F \u001B[0m");
+                            if(Jugadores.lista.indexOf(Jugadores.lista.get(i)) + 1 == jugadorElegido) System.out.println("\u001B[33m⚠ No puedes atacarte a ti mismo \u001B[0m");
+                        } while (jugadorElegido < 1 || jugadorElegido > Jugadores.lista.size() || Jugadores.lista.get(jugadorElegido - 1).getVidas() <= 0 || Jugadores.lista.indexOf(Jugadores.lista.get(i)) + 1 == jugadorElegido);
+
+                        Jugadores.lista.get(i).ataca(Jugadores.lista.get(jugadorElegido - 1));
+                    }
+                }
+            }
+
+            System.out.println("El ganador es: " + ganador);
+        } else if (Jugadores.lista.isEmpty()){
+            System.out.println("No hay jugadores en la lista");
+        } else {
+            System.out.println("Solo existe un jugador, así que gana automáticamente:\n" +
+                    Jugadores.lista.getFirst());
+        }
+    }
     // Pruebas de las fases
 
     @SuppressWarnings("unused")

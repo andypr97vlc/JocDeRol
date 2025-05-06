@@ -50,4 +50,13 @@ public class Teclado {
     public static int randomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max);
     }
+
+    // Funcion para capitalizar la primera letra y poner el resto en minúsculas
+    public static String capitalizar(String texto) {
+        if (texto == null || texto.isEmpty()) {
+            return texto; // Manejo de casos nulos o vacíos
+        }
+        return texto.substring(0, 1).toUpperCase() +
+                texto.substring(1).toLowerCase();
+    }
 }

@@ -47,7 +47,7 @@ public class Poderes {
     protected static void crear(){
         Teclado.sc.nextLine(); // Limpiar buffer
         System.out.println("Dime el nombre del poder.");
-        String nombre = Teclado.leerString();
+        String nombre = Teclado.capitalizar(Teclado.leerString());
 
         System.out.println("\uD83D\uDDE1 Dime el ataque del poder.");
         int dmg = Teclado.leerEntero();

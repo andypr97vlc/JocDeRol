@@ -44,7 +44,8 @@ public class Equipos {
     protected static void crear(){
         Teclado.sc.nextLine(); // Limpiar buffer
         System.out.println("Dime el nombre del equipo.");
-        String nombre = Teclado.leerString();
+        String nombre = Teclado.capitalizar(Teclado.leerString());
+
 
         Equipo equipo = new Equipo(nombre);
 

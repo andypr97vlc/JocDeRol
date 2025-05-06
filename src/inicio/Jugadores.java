@@ -78,7 +78,8 @@ public class Jugadores {
         }
 
         System.out.println("Dime el nombre del jugador.");
-        String nombre = Teclado.leerString();
+        String nombre = Teclado.capitalizar(Teclado.leerString());
+
 
         System.out.println("Elige con cabeza. Tus puntos de defensa \uD83D\uDEE1 serán el resultado de 100 - tus PA");
         int dmg;
@@ -112,7 +113,7 @@ public class Jugadores {
     // Procedimiento para consultar los jugadores
     protected static void consultar(){
         for (Jugador j : lista) {
-            System.out.println(j);
+            System.out.println((lista.indexOf(j) + 1) + " - " + j);
         }
     }
 
