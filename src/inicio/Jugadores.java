@@ -13,6 +13,14 @@ import java.util.ArrayList;
 public class Jugadores {
     static ArrayList<Jugador> lista = new ArrayList<>();
 
+    public static void setLista(ArrayList<Jugador> lista) {
+        Jugadores.lista = lista;
+    }
+
+    public static ArrayList<Jugador> getLista() {
+        return lista;
+    }
+
     protected static void menu(){
         boolean salir = false;
         while (!salir){
@@ -60,6 +68,7 @@ public class Jugadores {
         }
     }
 
+    // Procedimiento para crear jugadores
     protected static void crear(){
         Teclado.sc.nextLine(); // Limpiar buffer
         String tipo;

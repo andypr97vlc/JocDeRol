@@ -1,6 +1,8 @@
 package otros;
 
-public class Poder {
+import java.io.Serializable;
+
+public class Poder implements Serializable {
     private String nombre;
     private int bonusAtaque;
     private int bonusDefensa;

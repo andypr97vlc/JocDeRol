@@ -12,6 +12,14 @@ import java.util.ArrayList;
 public class Poderes {
     static ArrayList<Poder> lista = new ArrayList<>();
 
+    public static ArrayList<Poder> getLista() {
+        return lista;
+    }
+
+    public static void setLista(ArrayList<Poder> lista) {
+        Poderes.lista = lista;
+    }
+
     protected static void menu(){
         boolean salir = false;
         while (!salir){

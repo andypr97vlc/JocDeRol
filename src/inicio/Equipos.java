@@ -9,6 +9,14 @@ import java.util.ArrayList;
 public class Equipos {
     static ArrayList<Equipo> lista = new ArrayList<>();
 
+    public static ArrayList<Equipo> getLista() {
+        return lista;
+    }
+
+    public static void setLista(ArrayList<Equipo> lista) {
+        Equipos.lista = lista;
+    }
+
     protected static void menu(){
         boolean salir = false;
         while (!salir){

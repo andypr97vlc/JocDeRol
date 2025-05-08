@@ -54,7 +54,7 @@ public class Teclado {
     // Funcion para capitalizar la primera letra y poner el resto en minúsculas
     public static String capitalizar(String texto) {
         if (texto == null || texto.isEmpty()) {
-            return texto; // Manejo de casos nulos o vacíos
+            return texto; // Devuelve el texto en caso de nulo o vacío
         }
         return texto.substring(0, 1).toUpperCase() +
                 texto.substring(1).toLowerCase();

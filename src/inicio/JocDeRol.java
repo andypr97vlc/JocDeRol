@@ -1,5 +1,6 @@
 package inicio;
 
+import otros.DatosJuego;
 import otros.Equipo;
 import otros.Poder;
 import personajes.Alien;
@@ -16,6 +17,8 @@ public class JocDeRol {
                     ----- JUEGO DE ROL -----
                     1. Configuración\s
                     2. Jugar\s
+                    3. Guardar partida
+                    4. Cargar partida
                     0. Salir\s
                     ------------------------""");
             int opcion = Teclado.leerEntero();
@@ -29,6 +32,12 @@ public class JocDeRol {
                     break;
                 case 2:
                     menuJugar();
+                    break;
+                case 3:
+                    DatosJuego.guardarPartida();
+                    break;
+                case 4:
+                    DatosJuego.cargarPartida();
                     break;
                 default:
                     System.out.println("\u001B[33m⚠ No existe la opción elegida \u001B[0m");

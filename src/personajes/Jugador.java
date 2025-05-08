@@ -4,9 +4,10 @@ import otros.Equipo;
 import otros.Poder;
 import teclado.Teclado;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Jugador {
+public class Jugador implements Serializable {
     private String nombre;
     private int ataque;
     private int defensa;

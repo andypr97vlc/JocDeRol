@@ -2,9 +2,10 @@ package otros;
 
 import personajes.Jugador;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Equipo {
+public class Equipo implements Serializable {
     private String nombre;
     private ArrayList<Jugador> jugadores = new ArrayList<>();
 

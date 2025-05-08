@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e81216b-a478-407b-b51b-28405862ce9c" name="Changes" comment="Trabajando en el ejercicio 17, 2 y 3 punto">
+      <change afterPath="$PROJECT_DIR$/src/otros/DatosJuego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/Equipos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/Equipos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/JocDeRol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/JocDeRol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/Jugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/Jugadores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/inicio/Poderes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicio/Poderes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/otros/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otros/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/otros/Poder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/otros/Poder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personajes/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personajes/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teclado/Teclado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teclado/Teclado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +46,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/andypr97vlc/PRG_JocDeRol.git&quot;,
+    &quot;url&quot;: &quot;git@github.com:andypr97vlc/PRG_JocDeRol.git&quot;,
     &quot;accountId&quot;: &quot;84c7cc07-b1e1-4c30-a2e0-fc4fad641592&quot;
   }
 }</component>
