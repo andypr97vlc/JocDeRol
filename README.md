@@ -14,6 +14,7 @@ El programa consta de varias fases.
 6. [X] FASE 6: PROGRAMA PRINCIPAL. _Elegir entre las opciones propuestas_
     - [X] Jugar automático
     - [X] Jugar manual
-7. [ ] FASE 7: LISTAS ORDENADAS. Esta fase es opcional.
+7. [X] FASE 7: LISTAS ORDENADAS. Esta fase es opcional.
 8. [X] FASE 8: GUARDAMOS LA PARTIDA. Esta fase es opcional.
-9. [ ] FASE 9: EXCEPCIONES PERSONALIZADAS. Esta fase es opcional.
+9. [X] FASE 9: EXCEPCIONES PERSONALIZADAS. Esta fase es opcional.
+   - (Hechas pero no implementadas).

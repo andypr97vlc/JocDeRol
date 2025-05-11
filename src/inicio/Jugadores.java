@@ -9,6 +9,7 @@ import personajes.Jugador;
 import teclado.Teclado;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Jugadores {
     static ArrayList<Jugador> lista = new ArrayList<>();
@@ -121,6 +122,7 @@ public class Jugadores {
 
     // Procedimiento para consultar los jugadores
     protected static void consultar(){
+        Collections.sort(getLista());
         for (Jugador j : lista) {
             System.out.println((lista.indexOf(j) + 1) + " - " + j);
         }

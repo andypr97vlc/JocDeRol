@@ -7,7 +7,7 @@ import teclado.Teclado;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Jugador implements Serializable {
+public class Jugador implements Serializable, Comparable<Jugador> {
     private String nombre;
     private int ataque;
     private int defensa;
@@ -220,5 +220,17 @@ public class Jugador implements Serializable {
         if (poderes.contains(poder)) {
             poderes.remove(poder);
         } else System.out.println("\u001B[33m⚠ " + this.getNombre() + " no tiene ese poder!\u001B[0m");
+    }
+
+    // Este comparador ordena por clases y lo hace de forma automática cada vez que se consultan los jugadores o se inicia la partida
+    @Override
+    public int compareTo(Jugador otroJugador) {
+        // Comparar por nombres de clases para ordenar por tipos de jugador
+        int compararClase = this.getClass().getSimpleName().compareTo(otroJugador.getClass().getSimpleName());
+
+        if (compararClase != 0) return compararClase;
+
+        // Si tienen la misma clase se compara el nombre
+        return this.getNombre().compareTo(otroJugador.getNombre());
     }
 }

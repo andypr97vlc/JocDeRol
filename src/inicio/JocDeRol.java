@@ -9,6 +9,8 @@ import personajes.Humano;
 import personajes.Jugador;
 import teclado.Teclado;
 
+import java.util.Collections;
+
 public class JocDeRol {
     public static void main(String[] args) {
         boolean salir = false;
@@ -31,6 +33,7 @@ public class JocDeRol {
                     menuConfiguracion();
                     break;
                 case 2:
+                    Collections.sort(Jugadores.getLista());
                     menuJugar();
                     break;
                 case 3:
@@ -189,8 +192,8 @@ public class JocDeRol {
                     Jugadores.lista.getFirst());
         }
     }
-    // Pruebas de las fases
 
+    // Pruebas de las fases
     @SuppressWarnings("unused")
     public static void pruebaFase1() {
         Jugador jugador = new Jugador("Andy", 20, 15, Jugador.getVidaInicial());
